@@ -5,7 +5,6 @@ const { filterSearch, pagination, queryChecker } = require('./helpers');
 router.use(filterSearch);
 router.use(queryChecker);
 router.use(pagination);
-
 router.get('/', (req, res) => {
   const result = {
     totalResults: req.result.length,
