@@ -21,7 +21,21 @@ const closestPrices = (req, res, next) => {
 
   next();
 };
+const idgenerator = () => {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
+    const r = (Math.random() * 16) | 0,
+      v = c === 'x' ? r : (r & 0x3) | 0x8;
+    return v.toString(16);
+  });
+};
+
 router.use(pagination);
+router.post('/:create', (req, res) => {
+  const newProduct = req.body;
+  newProduct.id = idgenerator();
+  products.push(newProduct);
+  res.send(req.body);
+});
 
 router.get(
   '/:id',
