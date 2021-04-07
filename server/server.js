@@ -2,12 +2,15 @@ const express = require('express');
 const http = require('http');
 const bodyParser = require('body-parser');
 const app = express();
-const cors = require('cors')
-const products = require('./db');
+const cors = require('cors');
+const productAPI = require('./api/product');
+const productsAPI = require('./api/products');
 
-app.use(cors())
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use('/api/product', productAPI);
+app.use('/api/products', productsAPI);
 
 http.createServer(app).listen(3001, () => {
   console.log('Listen on 0.0.0.0:3001');
