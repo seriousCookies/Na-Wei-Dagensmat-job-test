@@ -14,19 +14,19 @@ This repo contains the starter code for Dagens job test, as well as the task des
 
 ### Tasks
 
-1. Users should be able to create products from a form page. The products should be appended to the database (see `server/db.js`).
+#### 1. Users should be able to create products from a form page. The products should be appended to the database (see `server/db.js`).
 
 - client runs in the browser on localhost:3000
 - From the form, submitted data is sent as a POST request to the backend- with a endpoint: localhost:3001/api/:create where it is appended to the database.
   <img src="client\public\client_screenshot.png" alt="client-screenshot">
 
-2. Create one endpoint to get products. It should be possible to filter by category, maximum and minimum price. The endpoint should be paged with a page size of 24 products per page. No need to write frontend code.
+#### 2. Create one endpoint to get products. It should be possible to filter by category, maximum and minimum price. The endpoint should be paged with a page size of 24 products per page. No need to write frontend code.
 
 - endpoint for getting all products http://localhost:3001/api/products
 - Additional filters- category, min, max price, page size(default=24), and page (filters are added as express middleware)
 - Returns- total results, currently displayed results, and actual results.
-  example URL: http://localhost:3001/api/products?category=meat&maxPrice=500&minPrice=100&limit=5&page=2
-  example result:
+  - example URL: http://localhost:3001/api/products?category=meat&maxPrice=500&minPrice=100&limit=5&page=2
+  - example result:
 
 ```
 {
@@ -67,13 +67,13 @@ This repo contains the starter code for Dagens job test, as well as the task des
 }
 ```
 
-3. Create one endpoint that takes a product id parameter and returns the `N` products with nearest price in the same category. You can choose `N` yourself. No need to write frontend code.
+#### 3. Create one endpoint that takes a product id parameter and returns the `N` products with nearest price in the same category. You can choose `N` yourself. No need to write frontend code.
 
 - endpoint for getting one product-http://localhost:3001/api/product/:id
 - number of products returned are decided by a "limit" parameter and sorted based on the product nearest in price.
-- Result shows- product matched to searched ID, total number of products in the same category and currently displayed results
-  example URL: http://localhost:3001/api/product/bec7ab80-83a2-46f4-8cce-a95e652b2ae5?page=1&limit=5
-  example results:
+- Returns- product matched to searched ID, total number of products in the same category and currently displayed results
+  - example URL: http://localhost:3001/api/product/bec7ab80-83a2-46f4-8cce-a95e652b2ae5?page=1&limit=5
+  - example results:
   ```
   {
   "product": {
@@ -118,10 +118,6 @@ This repo contains the starter code for Dagens job test, as well as the task des
   ]
   }
 
-  ```
-
-```
 ### Delivery
 
 Clone the repo, solve the tasks and push your code to a public GitHub repo, Bitbucket repo, or similar. Send a link to the solution to Dagens.
-```
