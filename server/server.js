@@ -1,15 +1,14 @@
 const express = require('express');
 const http = require('http');
-const bodyParser = require('body-parser');
 const app = express();
 const cors = require('cors');
 const productAPI = require('./api/product');
 const productsAPI = require('./api/products');
 
 app.use(cors());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-app.use('/api/product', productAPI);
+app.use(express.json({ limit: '20mb' }));
+app.use(express.urlencoded({ extended: false, limit: '20mb' }));
+app.use('/api', productAPI);
 app.use('/api/products', productsAPI);
 
 http.createServer(app).listen(3001, () => {

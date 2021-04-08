@@ -1,7 +1,7 @@
-const App = () => (
-  <div className="app">
-    <h3>Happy hacking!</h3>
-  </div>
-);
+import AddProduct from './components/AddProduct';
+
+const App = () => {
+  return <AddProduct />;
+};
 
 export default App;
