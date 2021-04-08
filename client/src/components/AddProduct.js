@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Form, Button } from 'react-bootstrap';
 import axios from 'axios';
-const URL = 'http://localhost:3001/api/product/create';
+const URL = 'http://localhost:3001/api/create';
 const categoryOptions = ['greens', 'meat', 'fish'];
 const initialState = {
   name: '',
